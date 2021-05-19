@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Tunisair</string>
+    <string name="app_title">Get Closer</string>
+    <string name="app_subtitle">TUNISAIR APP</string>
+    <string name="add_holiday_permission">Add Holiday Permission</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_search">Search</string>
+    <string name="demandes_de_cong">Demandes de congé</string>
+    <string name="demandes_d_autorisation">Demandes d\'autorisation</string>
+    <string name="demande_history">Demandes History</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="hello_text">Hello there, Welcome Back</string>
+    <string name="sign_in_text">Sign In to continue</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="forget_password_text">Forget Password</string>
+    <string name="btnSignIn">SignIN</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_demande_conge">Add Demande Congé</string>
+    <string name="add_your_demand_here">Add Your Demand Here</string>
+    <string name="fill_the_form_below_to_pass_your_demand">Fill the form below to pass your demand</string>
+    <string name="begin_date">Begin Date</string>
+    <string name="end_date">End Date</string>
+    <string name="btn_validate">Validate</string>
+    <string name="your_description">Your Description</string>
+    <string name="demande_de_cong">Demande de Congé</string>
+    <string name="demande_d_autorisation">Demande d\'autorisation</string>
+    <string name="add_demande_autorisation">Add Demande Autorisation</string>
+</resources>
