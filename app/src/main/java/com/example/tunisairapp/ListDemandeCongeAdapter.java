@@ -65,7 +65,7 @@ public class ListDemandeCongeAdapter extends RecyclerView.Adapter<ListDemandeCon
             super(itemView);
 
             dateDebut=itemView.findViewById(R.id.lib);
-            dateFin= itemView.findViewById(R.id.sous_nom);
+            dateFin= itemView.findViewById(R.id.lib2);
             description =itemView.findViewById(R.id.sous_nom);
             fichier= itemView.findViewById(R.id.sous_nom);
             typeConge= itemView.findViewById(R.id.sous_nom);

@@ -169,7 +169,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.developpers) {
-            Toast.makeText(HomeActivity.this, "@Copyright Aissa Hanen & Jbeli Mohamed Ali", Toast.LENGTH_LONG).show();
+            Toast.makeText(HomeActivity.this, "@Copyright Yasmin Karaoui & Jbeli Mohamed Ali", Toast.LENGTH_LONG).show();
         }
         return true;
     }

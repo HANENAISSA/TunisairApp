@@ -14,58 +14,58 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:orientation="horizontal" >
+        android:orientation="vertical" >
 
-        <ImageView
-            android:id="@+id/row_img"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="5dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/logo_gazelle" />
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="294dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="15dp"
-            android:layout_marginStart="10dp">
-            <TextView
-                android:id="@+id/lib"
-                android:layout_width="142dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="3dp"
-                android:text="name"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/sous_nom"
-                android:layout_width="142dp"
+                android:layout_width="284dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="3dp"
                 android:layout_marginTop="5dp"
                 android:text="surname"
                 android:textSize="15sp"
                 android:textStyle="bold" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Text here"
-            android:textSize="13sp"
-            android:layout_marginTop="46dp"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="43dp"
-            android:layout_marginStart="15dp"
-            android:src="@drawable/ic_favorite_border"
-            app:tint="@color/myRed" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="From" />
+
+            <TextView
+                android:id="@+id/lib2"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="15dp"
+                android:text="name2"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="To" />
+
+            <TextView
+                android:id="@+id/lib"
+                android:layout_width="294dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="15dp"
+                android:text="name"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
         </LinearLayout>
     </LinearLayout>
 
