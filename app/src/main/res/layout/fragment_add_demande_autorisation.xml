@@ -3,13 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddDemandeAutorisationFrag"
+    tools:context=".views.fragments.AddDemandeAutorisationFrag"
     android:layout_marginTop="@dimen/_50sdp">
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -17,23 +18,26 @@
             android:layout_gravity="left"
             android:orientation="vertical"
             android:padding="20dp"
-            tools:context=".Controller.Pages.LoginActivity">
+            tools:context=".Controller.Pages.LoginActivity"
+            tools:ignore="RtlHardcoded">
 
         <ImageView
             android:id="@+id/logo_img"
             android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_height="140dp"
             android:src="@drawable/logo"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:contentDescription="@string/tunisair_s_logo" />
 
         <TextView
             android:id="@+id/logo_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="serif"
-            android:text="@string/add_your_demand_here"
+            android:text="@string/add_your_auth_demand_here"
             android:textColor="@color/myblue"
-            android:textSize="35sp" />
+            android:textSize="28sp"
+            android:layout_marginBottom="5dp"/>
 
             <TextView
                 android:id="@+id/slogan_name"
@@ -52,15 +56,17 @@
                     android:id="@+id/heure_debut"
                     android:layout_width="180dp"
                     android:layout_height="50dp"
-                    android:hint="From"
-                    android:inputType="time" />
+                    android:hint="@string/from_hint"
+                    android:inputType="time"
+                    tools:ignore="Autofill" />
 
                 <EditText
                     android:id="@+id/heure_fin"
                     android:layout_width="180dp"
                     android:layout_height="50dp"
-                    android:hint="To"
-                    android:inputType="time" />
+                    android:hint="@string/to_hint"
+                    android:inputType="time"
+                    android:autofillHints="" />
 
             </LinearLayout>
             <EditText
@@ -68,8 +74,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="15dp"
-                android:hint="Reason"
-                android:inputType="text" />
+                android:hint="@string/reason"
+                android:inputType="text"
+                android:autofillHints="" />
             <Button
                 android:id="@+id/btn_ValidLogin"
                 android:layout_width="match_parent"

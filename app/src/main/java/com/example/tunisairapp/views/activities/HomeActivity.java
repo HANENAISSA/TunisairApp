@@ -1,4 +1,4 @@
-package com.example.tunisairapp;
+package com.example.tunisairapp.views.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -11,13 +11,17 @@ import androidx.fragment.app.FragmentTransaction;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
+import com.example.tunisairapp.views.fragments.AddDemandeAutorisationFrag;
+import com.example.tunisairapp.views.fragments.AddNewDemandeCongeFrag;
+import com.example.tunisairapp.views.fragments.DemandeAutorisationFrag;
+import com.example.tunisairapp.views.fragments.DemandesCongeFrag;
+import com.example.tunisairapp.views.fragments.HomeFragment;
+import com.example.tunisairapp.R;
 import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -142,7 +146,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                         .setMessage("Clicking Yes will make u redirected to Login page")
                         //set positive button
                         .setPositiveButton("Yes", (dialogInterface, i1) -> {
-                            Intent i6 = new Intent(HomeActivity.this,LoginActivity.class);
+                            Intent i6 = new Intent(HomeActivity.this, LoginActivity.class);
                             startActivity(i6);
                             finish();
                         })
@@ -159,18 +163,5 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     }
     /* end navigation drawer functions */
 
-    /* Start top ToolBar functions */
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.developpers) {
-            Toast.makeText(HomeActivity.this, "@Copyright Yasmin Karaoui & Jbeli Mohamed Ali", Toast.LENGTH_LONG).show();
-        }
-        return true;
-    }
 }

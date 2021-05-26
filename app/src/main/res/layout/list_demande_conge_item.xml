@@ -12,61 +12,80 @@
     android:id="@+id/cardView">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_120sdp"
         android:layout_margin="5dp"
         android:orientation="vertical" >
-
-        <LinearLayout
-            android:layout_width="294dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/sous_nom"
-                android:layout_width="284dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="5dp"
-                android:text="surname"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="From" />
-
-            <TextView
-                android:id="@+id/lib2"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="15dp"
-                android:text="name2"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/_155sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+                <TextView
+                    android:id="@+id/titre"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/txtTitreType"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="To" />
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20sdp">
+                <TextView
+                    android:id="@+id/txtFrom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/from"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/date_debut"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/txtTo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/to"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/date_fin"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20sdp">
+                <TextView
+                    android:id="@+id/txtEtat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/request_state"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/etatLeaveReq"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/lib"
-                android:layout_width="294dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="15dp"
-                android:text="name"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-
-        </LinearLayout>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

@@ -1,17 +1,20 @@
-package com.example.tunisairapp;
+package com.example.tunisairapp.views.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+
+import com.example.tunisairapp.views.activities.DetailsDemandeActivity;
+import com.example.tunisairapp.R;
+import com.example.tunisairapp.adapters.ListDemandeCongeAdapter;
+import com.example.tunisairapp.models.DemandeConge;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,18 +78,18 @@ public class DemandesCongeFrag extends Fragment  implements ListDemandeCongeAdap
         // Inflate the layout for this fragment
         // list Demandes
 
-        lstDemandConge.add(new DemandeConge("26-11-2020","30-11-2020", "description", "fichier", "Annul Leave"));
-        lstDemandConge.add(new DemandeConge("21-12-2021","27-12-2021", "description", "fichier", "Medical Leave"));
-        lstDemandConge.add(new DemandeConge("23-05-2020","29-05-2020", "description", "fichier", "Medical Leave"));
-        lstDemandConge.add(new DemandeConge("13-12-2005","27-12-2005", "description", "fichier", "Annul Leave"));
-        lstDemandConge.add(new DemandeConge("12-11-2021","13-11-2021", "description", "fichier", "Annul Leave"));
-        lstDemandConge.add(new DemandeConge("12-11-2012","15-11-2012", "description", "fichier", "Medical Leave"));
-        lstDemandConge.add(new DemandeConge("21-11-20122","29-11-20122", "description", "fichier", "Medical Leave"));
-        lstDemandConge.add(new DemandeConge("11-12-2020","25-12-2020", "description", "fichier", "Annul Leave"));
-        lstDemandConge.add(new DemandeConge("14-15-2023","15-11-2023", "description", "fichier", "Annul Leave"));
-        lstDemandConge.add(new DemandeConge("11-01-2009","19-01-2009", "description", "fichier", "Medical Leave"));
-        lstDemandConge.add(new DemandeConge("14-12-2020","20-12-2020", "description", "fichier", "Medical Leave"));
-        lstDemandConge.add(new DemandeConge("17-03-2025","23-03-2025", "description", "fichier", "Medical Leave"));
+        lstDemandConge.add(new DemandeConge("26-11-2020","30-11-2020", "description", "fichier", "Annual Leave", "Accepted"));
+        lstDemandConge.add(new DemandeConge("21-12-2021","27-12-2021", "description", "fichier", "Medical Leave", "In progress"));
+        lstDemandConge.add(new DemandeConge("23-05-2020","29-05-2020", "description", "fichier", "Medical Leave", "Rejected"));
+        lstDemandConge.add(new DemandeConge("13-12-2005","27-12-2005", "description", "fichier", "Annual Leave", "In progress"));
+        lstDemandConge.add(new DemandeConge("12-11-2021","13-11-2021", "description", "fichier", "Annual Leave", "In progress"));
+        lstDemandConge.add(new DemandeConge("12-11-2012","15-11-2012", "description", "fichier", "Medical Leave", "Accepted"));
+        lstDemandConge.add(new DemandeConge("21-11-2012","29-11-2012", "description", "fichier", "Medical Leave", "Accepted"));
+        lstDemandConge.add(new DemandeConge("11-12-2020","25-12-2020", "description", "fichier", "Annual Leave", "In progress"));
+        lstDemandConge.add(new DemandeConge("14-15-2023","15-11-2023", "description", "fichier", "Annual Leave", "Rejected"));
+        lstDemandConge.add(new DemandeConge("11-01-2009","19-01-2009", "description", "fichier", "Medical Leave", "In progress"));
+        lstDemandConge.add(new DemandeConge("14-12-2020","20-12-2020", "description", "fichier", "Medical Leave", "Rejected"));
+        lstDemandConge.add(new DemandeConge("17-03-2025","23-03-2025", "description", "fichier", "Medical Leave", "Accepted"));
 
         View view = inflater.inflate(R.layout.fragment_demandes_conge, container, false);
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview_demande_conge);

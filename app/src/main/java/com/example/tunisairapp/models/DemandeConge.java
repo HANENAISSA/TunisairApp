@@ -1,16 +1,22 @@
-package com.example.tunisairapp;
+package com.example.tunisairapp.models;
 
 public class DemandeConge {
 
-    private String dateDebut, datefin, description, fichier, typeConge;
+    private String dateDebut;
+    private String datefin;
+    private String description;
+    private String fichier;
+    private String typeConge;
+    private String etatRequestConge;
 
-    public DemandeConge(String dateDebut, String datefin, String description, String fichier, String typeConge)
+    public DemandeConge(String dateDebut, String datefin, String description, String fichier, String typeConge, String etatRequestConge)
     {
-        this.dateDebut= dateDebut;
-        this.datefin= datefin;
-        this.description= description;
-        this.fichier= fichier;
-        this.typeConge= typeConge;
+        this.dateDebut = dateDebut;
+        this.datefin = datefin;
+        this.description = description;
+        this.fichier = fichier;
+        this.typeConge = typeConge;
+        this.etatRequestConge = etatRequestConge;
     }
 
     public String getDateDebut() {
@@ -51,6 +57,14 @@ public class DemandeConge {
 
     public void setTypeConge(String typeConge) {
         this.typeConge = typeConge;
+    }
+
+    public String getEtatRequestConge() {
+        return etatRequestConge;
+    }
+
+    public void setEtatRequestConge(String etatRequestConge) {
+        this.etatRequestConge = etatRequestConge;
     }
 
 }

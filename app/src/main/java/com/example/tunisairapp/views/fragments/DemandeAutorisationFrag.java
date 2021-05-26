@@ -1,4 +1,4 @@
-package com.example.tunisairapp;
+package com.example.tunisairapp.views.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.tunisairapp.views.activities.DetailsDemandeActivity;
+import com.example.tunisairapp.R;
+import com.example.tunisairapp.adapters.ListDemandeAutorisationAdapter;
+import com.example.tunisairapp.models.DemandeAutorisation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,15 +78,14 @@ public class DemandeAutorisationFrag extends Fragment implements ListDemandeAuto
         // Inflate the layout for this fragment
         // list Demandes
 
-        lstDemandAutorisation.add(new DemandeAutorisation("nom","soustitre", "description"));
-        lstDemandAutorisation.add(new DemandeAutorisation("nom","soustitre", "description"));
-        lstDemandAutorisation.add(new DemandeAutorisation("nom","soustitre", "description"));
-        lstDemandAutorisation.add(new DemandeAutorisation("nom","soustitre", "description"));
-        lstDemandAutorisation.add(new DemandeAutorisation("nom","soustitre", "description"));
-        lstDemandAutorisation.add(new DemandeAutorisation("nom","soustitre", "description"));
-        lstDemandAutorisation.add(new DemandeAutorisation("nom","soustitre", "description"));
-        lstDemandAutorisation.add(new DemandeAutorisation("nom","soustitre", "description"));
-        lstDemandAutorisation.add(new DemandeAutorisation("nom","soustitre", "description"));
+        lstDemandAutorisation.add(new DemandeAutorisation("12:00","18:00", "description", "Accepted","25-01-2020"));
+        lstDemandAutorisation.add(new DemandeAutorisation("07:00","13:00", "description", "In progress","30-03-2021"));
+        lstDemandAutorisation.add(new DemandeAutorisation("08:30","10:30", "description", "Accepted","05-11-2021"));
+        lstDemandAutorisation.add(new DemandeAutorisation("09:25","18:30", "description", "Rejected","18-07-2020"));
+        lstDemandAutorisation.add(new DemandeAutorisation("12:15","17:30", "description", "Accepted","07-06-2021"));
+        lstDemandAutorisation.add(new DemandeAutorisation("14:45","14:40", "description", "In progress","20-06-2021"));
+        lstDemandAutorisation.add(new DemandeAutorisation("08:00","18:00", "description", "Accepted","19-10-2020"));
+        lstDemandAutorisation.add(new DemandeAutorisation("11:00","16:00", "description", "Rejected","01-12-2020"));
 
 
         View view = inflater.inflate(R.layout.fragment_demande_autorisation, container, false);

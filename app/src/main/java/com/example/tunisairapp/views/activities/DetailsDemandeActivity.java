@@ -1,8 +1,10 @@
-package com.example.tunisairapp;
+package com.example.tunisairapp.views.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.tunisairapp.R;
 
 public class DetailsDemandeActivity extends AppCompatActivity {
 

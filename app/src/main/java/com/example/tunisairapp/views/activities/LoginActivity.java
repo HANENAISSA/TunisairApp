@@ -1,4 +1,4 @@
-package com.example.tunisairapp;
+package com.example.tunisairapp.views.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
+
+import com.example.tunisairapp.R;
 
 public class LoginActivity extends AppCompatActivity {
 

@@ -16,4 +16,7 @@
     <color name="my_dark_blue">#090F60</color>
     <color name="myRed">#eb1f28</color>
     <color name="myDarkRed">#a31b20</color>
+    <color name="mydarkGreen">#008000</color>
+    <color name="mydarkOrange">#FF8C00</color>
+
 </resources>

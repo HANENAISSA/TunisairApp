@@ -1,4 +1,4 @@
-package com.example.tunisairapp;
+package com.example.tunisairapp.adapters;
 
 
 import android.content.Context;
@@ -8,9 +8,19 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tunisairapp.R;
+import com.example.tunisairapp.models.DemandeConge;
+
 import java.util.List;
+
+import static com.example.tunisairapp.R.color.black;
+import static com.example.tunisairapp.R.color.myDarkRed;
+import static com.example.tunisairapp.R.color.myblue;
+import static com.example.tunisairapp.R.color.mydarkGreen;
+import static com.example.tunisairapp.R.color.mydarkOrange;
 
 public class ListDemandeCongeAdapter extends RecyclerView.Adapter<ListDemandeCongeAdapter.DemandeCongeViewHolder> {
 
@@ -39,9 +49,24 @@ public class ListDemandeCongeAdapter extends RecyclerView.Adapter<ListDemandeCon
 
         holder.dateDebut.setText(demandeConge.getDateDebut());
         holder.dateFin.setText(demandeConge.getDatefin());
-        holder.description.setText(demandeConge.getDescription());
-        holder.fichier.setText(demandeConge.getFichier());
         holder.typeConge.setText(demandeConge.getTypeConge());
+        holder.etatReqConge.setText(demandeConge.getEtatRequestConge());
+        switch (holder.etatReqConge.getText().toString()){
+            case "Accepted" :
+                holder.etatReqConge.setTextColor(ContextCompat.getColor(context, mydarkGreen));
+                break;
+            case "In progress" :
+                holder.etatReqConge.setTextColor(ContextCompat.getColor(context, mydarkOrange));
+                break;
+            case "Rejected" :
+                holder.etatReqConge.setTextColor(ContextCompat.getColor(context, myblue));
+                break;
+            default:
+                holder.etatReqConge.setTextColor(ContextCompat.getColor(context, black));
+        }
+
+        //holder.description.setText(demandeConge.getDescription());
+        //holder.fichier.setText(demandeConge.getFichier());
 
         /*holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,17 +83,18 @@ public class ListDemandeCongeAdapter extends RecyclerView.Adapter<ListDemandeCon
     }
 
     public static class DemandeCongeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView dateDebut, dateFin, description, fichier, typeConge;
+        TextView dateDebut, dateFin, description, fichier, typeConge, etatReqConge;
         OnDemandeCongeListener onDemandeCongeListener;
 
         public DemandeCongeViewHolder(@NonNull View itemView, OnDemandeCongeListener onCampListener) {
             super(itemView);
 
-            dateDebut=itemView.findViewById(R.id.lib);
-            dateFin= itemView.findViewById(R.id.lib2);
-            description =itemView.findViewById(R.id.sous_nom);
-            fichier= itemView.findViewById(R.id.sous_nom);
-            typeConge= itemView.findViewById(R.id.sous_nom);
+            dateDebut = itemView.findViewById(R.id.date_debut);
+            dateFin = itemView.findViewById(R.id.date_fin);
+            typeConge = itemView.findViewById(R.id.txtTitreType);
+            etatReqConge = itemView.findViewById(R.id.etatLeaveReq);
+            //description =itemView.findViewById(R.id.desc);
+            //fichier= itemView.findViewById(R.id.fichier);
 
             this.onDemandeCongeListener = onCampListener;
             itemView.setOnClickListener(this);

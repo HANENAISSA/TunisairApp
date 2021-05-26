@@ -4,18 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".DemandesCongeFrag"
+    tools:context=".views.fragments.DemandesCongeFrag"
     android:layout_marginTop="@dimen/_50sdp">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Leaves History" />
+        android:text="@string/leave_s_history"
+        android:textAlignment="center"
+        android:textSize="@dimen/_17sdp"
+        android:textStyle="bold"
+        android:textColor="@color/myRed"
+        android:layout_marginTop="5dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_demande_conge"
         android:layout_width="match_parent"
-        android:layout_height="768dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"/>
 </FrameLayout>

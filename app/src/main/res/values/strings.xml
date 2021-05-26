@@ -15,17 +15,29 @@
     <string name="email_hint">Email</string>
     <string name="password_hint">Password</string>
     <string name="forget_password_text">Forget Password</string>
-    <string name="btnSignIn">SignIN</string>
+    <string name="btnSignIn">Sign In</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_demande_conge">Add Leave Request</string>
-    <string name="add_your_demand_here">Add Your Request Here</string>
+    <string name="add_your_auth_demand_here">Add Your Authorization Request Here</string>
+    <string name="add_your_leave_demand_here">Add Your Leave Request Here</string>
     <string name="fill_the_form_below_to_pass_your_demand">Fill the form below to pass your Request</string>
     <string name="begin_date">Begin Date</string>
     <string name="end_date">End Date</string>
     <string name="btn_validate">Validate</string>
     <string name="your_description">Your Description</string>
-    <string name="demande_de_cong">Demande de Congé</string>
+    <string name="demande_de_cong">Leave Request</string>
     <string name="demande_d_autorisation">Request Authorization</string>
     <string name="add_demande_autorisation">Add Authorization Request</string>
+    <string name="leave_s_history">Leave\'s History</string>
+    <string name="from">From :" "</string>
+    <string name="to">To :" "</string>
+    <string name="request_state">Request State :" "</string>
+    <string name="date">Date :" "</string>
+    <string name="authorization_requests">Authorization Requests</string>
+    <string name="title">Title :" "</string>
+    <string name="from_hint">From</string>
+    <string name="tunisair_s_logo">TUNISAIR\'S LOGO</string>
+    <string name="to_hint">To</string>
+    <string name="reason">Reason</string>
 </resources>
