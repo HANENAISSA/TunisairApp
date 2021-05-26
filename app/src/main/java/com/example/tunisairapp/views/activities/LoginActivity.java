@@ -10,11 +10,15 @@ import android.widget.Button;
 
 import com.example.tunisairapp.R;
 
+import java.util.regex.Pattern;
+
 public class LoginActivity extends AppCompatActivity {
 
     Button btnValidLogin;
     /*ImageView logo_img;
     TextView logo_title, logo_subtitle;*/
+    private static final Pattern PASSWORED_Pattern = Pattern.compile("^" + ".{4,}" +"$");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,5 +37,26 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
+
+    public boolean checkEmail(String email){
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+                "[a-zA-Z0-9_+&*-]+)*@" +
+                "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                "A-Z]{2,7}$";
+
+        Pattern pat = Pattern.compile(emailRegex);
+        if (email == null)
+            return false;
+        return pat.matcher(email).matches();
+
+        //return Patterns.EMAIL_ADDRESS.matcher(mail).matches();
+    }
+    public boolean chekpassword(String password){
+        if(PASSWORED_Pattern.matcher(password).matches())
+        {
+            return true;
+        }
+        else return false;
     }
 }

@@ -40,13 +40,14 @@
     <string name="tunisair_s_logo">TUNISAIR\'S LOGO</string>
     <string name="to_hint">To</string>
     <string name="reason">Reason</string>
-    <string name="justification_hint">Justification</string>
+    <string name="justification_hint">Description</string>
     <string name="file_hint">File</string>
     <string name="type_hint">Type</string>
 
     <string name="aaaaaaa">MyAndroidApp</string>
     <string name="type_prompt">Choose your Request Type</string>
     <string name="click_to_attach_file">Click to Attach file</string>
+    <string name="number_of_days">Number of days</string>
 
     <string-array name="type_arrays">
     <item>Annual leave</item>

@@ -38,11 +38,25 @@
             android:text="@string/fill_the_form_below_to_pass_your_demand"
             android:textColor="@color/black"
             android:textSize="18sp" />
-
+        <Spinner
+            android:id="@+id/spinnerType"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:entries="@array/type_arrays"
+            android:prompt="@string/type_prompt"
+            android:layout_marginTop="30dp"
+            />
+        <EditText
+            android:id="@+id/nbrDays"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/number_of_days"
+            android:inputType="number"
+            android:autofillHints=""
+            />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:orientation="horizontal">
 
             <EditText
@@ -64,7 +78,7 @@
                 android:autofillHints="" />
     </LinearLayout>
     <EditText
-        android:id="@+id/Description"
+        android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
@@ -72,15 +86,9 @@
         android:inputType="textImeMultiLine"
         android:autofillHints="" />
 
-        <Spinner
-            android:id="@+id/spinnerType"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:entries="@array/type_arrays"
-            android:prompt="@string/type_prompt"
-            android:layout_marginTop="15dp"
-            />
+
         <LinearLayout
+            android:id="@+id/layout_file"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"

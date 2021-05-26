@@ -8,6 +8,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.provider.DocumentsContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,12 +16,19 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tunisairapp.R;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -31,8 +39,19 @@ import static android.app.Activity.RESULT_OK;
  */
 public class AddNewDemandeCongeFrag extends Fragment {
     Spinner dropdown;
+    Button btnUploadFile, btnValidateLeaveReq;
     Intent myFileIntent;
     TextView txtPathFile;
+    EditText edtDateDebut, edtDateFin, edtDescription, edtNbrDays;
+    LinearLayout layoutFile;
+
+    // For validators
+    private Pattern pattern;
+    private Matcher matcher;
+
+    private static final String DATE_PATTERN =
+            "(0?[1-9]|1[012]) [/.-] (0?[1-9]|[12][0-9]|3[01]) [/.-] ((19|20)\\d\\d)";
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -79,10 +98,27 @@ public class AddNewDemandeCongeFrag extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_add_new_demande_conge, container, false);
+
+        // spinner or dropdown (Liste deroulante)
         dropdown = rootView.findViewById(R.id.spinnerType);
-        Button btnUploadFile = rootView.findViewById(R.id.btnUploadFile);
+
+        // buttons
+        btnUploadFile = rootView.findViewById(R.id.btnUploadFile);
+        btnValidateLeaveReq = rootView.findViewById(R.id.btn_ValidLeaveReq);
+
+        // Text path file
         txtPathFile = rootView.findViewById(R.id.txtfichier);
 
+        // Edit Texts variables
+        edtDateDebut = rootView.findViewById(R.id.date_debut);
+        edtDateFin = rootView.findViewById(R.id.date_fin);
+        edtDescription = rootView.findViewById(R.id.description);
+        edtNbrDays = rootView.findViewById(R.id.nbrDays);
+
+        // Layout
+        layoutFile = rootView.findViewById(R.id.layout_file);
+
+        // Listeners
         btnUploadFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,6 +128,40 @@ public class AddNewDemandeCongeFrag extends Fragment {
 
             }
         });
+
+        btnValidateLeaveReq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*matcher = Pattern.compile(DATE_PATTERN).matcher(edtDateDebut.getText());
+                matcher = Pattern.compile(DATE_PATTERN).matcher(edtDateFin.getText());
+                if (ValidDate(edtDateDebut.toString()) && ValidDate(edtDateFin.toString()) && ValidDescription(edtDescription.toString())){
+                    Toast.makeText(getContext(), "Valid Form", Toast.LENGTH_LONG).show();
+                }*/
+            }
+        });
+
+
+        layoutFile.setVisibility(View.INVISIBLE);
+        edtNbrDays.setVisibility(View.INVISIBLE);
+
+        dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                if(parent.getItemAtPosition(position).toString()=="Medical leave"){
+                    layoutFile.setVisibility(View.VISIBLE);
+                }
+                if(parent.getItemAtPosition(position).toString()=="Annual leave"){
+                    edtNbrDays.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // nothing happen
+            }
+        });
+
         return rootView;
     }
 
@@ -100,9 +170,72 @@ public class AddNewDemandeCongeFrag extends Fragment {
         switch (requestCode) {
             case 10 : if (resultCode == RESULT_OK){
                 String path = data.getData().getPath();
-                txtPathFile.setText("File : "+ path );
+                txtPathFile.setText("File : "+ path);
                 break;
             }
         }
+    }
+
+    public boolean ValidDate(final String date){
+        matcher = pattern.matcher(date);
+        if(matcher.matches()){
+            matcher.reset();
+
+            if(matcher.find()){
+                String day = matcher.group(1);
+                String month = matcher.group(2);
+                int year = Integer.parseInt(matcher.group(3));
+
+                if (day.equals("31") &&
+                        (month.equals("4") || month .equals("6") || month.equals("9") ||
+                                month.equals("11") || month.equals("04") || month .equals("06") ||
+                                month.equals("09"))) {
+                    return false; // only 1,3,5,7,8,10,12 has 31 days
+                }
+
+                else if (month.equals("2") || month.equals("02")) {
+                    //leap year
+                    if(year % 4==0){
+                        if(day.equals("30") || day.equals("31")){
+                            return false;
+                        }
+                        else{
+                            return true;
+                        }
+                    }
+                    else{
+                        if(day.equals("29")||day.equals("30")||day.equals("31")){
+                            return false;
+                        }
+                        else{
+                            return true;
+                        }
+                    }
+                }
+
+                else{
+                    return true;
+                }
+            }
+
+            else{
+                return false;
+            }
+        }
+        else{
+            return false;
+        }
+    }
+
+    public boolean ValidDescription(final String desc){
+        if(desc.isEmpty()) {
+            return false;
+        }
+        return true;
+    }
+
+    public boolean ValidNbrDays(final String nbr){
+        //if(nbr)
+        return true;
     }
 }
