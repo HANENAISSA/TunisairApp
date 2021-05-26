@@ -1,14 +1,28 @@
 package com.example.tunisairapp.views.fragments;
 
+import android.content.Intent;
+import android.graphics.Color;
+import android.media.Session2Command;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.tunisairapp.R;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,10 +30,9 @@ import com.example.tunisairapp.R;
  * create an instance of this fragment.
  */
 public class AddNewDemandeCongeFrag extends Fragment {
-
-    /*private Spinner spinner;
-    private static final String[] paths = {"item 1", "item 2", "item 3"};*/
-
+    Spinner dropdown;
+    Intent myFileIntent;
+    TextView txtPathFile;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -58,20 +71,38 @@ public class AddNewDemandeCongeFrag extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_add_new_demande_conge, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_add_new_demande_conge, container, false);
+        dropdown = rootView.findViewById(R.id.spinnerType);
+        Button btnUploadFile = rootView.findViewById(R.id.btnUploadFile);
+        txtPathFile = rootView.findViewById(R.id.txtfichier);
 
-        /*spinner = (Spinner) getView().findViewById(R.id.spinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),
-                android.R.layout.simple_spinner_item,paths);
+        btnUploadFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myFileIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                myFileIntent.setType("*/*");
+                startActivityForResult(myFileIntent, 10);
 
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);*/
-        return view;
+            }
+        });
+        return rootView;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        switch (requestCode) {
+            case 10 : if (resultCode == RESULT_OK){
+                String path = data.getData().getPath();
+                txtPathFile.setText("File : "+ path );
+                break;
+            }
+        }
     }
 }

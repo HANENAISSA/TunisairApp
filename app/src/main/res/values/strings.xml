@@ -40,4 +40,19 @@
     <string name="tunisair_s_logo">TUNISAIR\'S LOGO</string>
     <string name="to_hint">To</string>
     <string name="reason">Reason</string>
+    <string name="justification_hint">Justification</string>
+    <string name="file_hint">File</string>
+    <string name="type_hint">Type</string>
+
+    <string name="aaaaaaa">MyAndroidApp</string>
+    <string name="type_prompt">Choose your Request Type</string>
+    <string name="click_to_attach_file">Click to Attach file</string>
+
+    <string-array name="type_arrays">
+    <item>Annual leave</item>
+    <item>Medical leave</item>
+    <item>Breavement leave</item>
+    <item>Birth leave</item>
+    <item>Marriage leave</item>
+    </string-array>
 </resources>

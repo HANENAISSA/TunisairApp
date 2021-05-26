@@ -43,7 +43,6 @@
                 android:id="@+id/txtFrom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
                 android:text="@string/from"
                 android:textSize="16sp" />
             <TextView
@@ -58,7 +57,7 @@
                 android:id="@+id/txtTo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_35sdp"
                 android:text="@string/to"
                 android:textSize="16sp" />
             <TextView
