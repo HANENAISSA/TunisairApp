@@ -31,7 +31,7 @@
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:layout_constraintVertical_bias="0.0"
-            app:logo="@drawable/ic_menu_open"
+            app:navigationIcon="@drawable/ic_menu_open"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:title="@string/app_name"
             app:titleMarginStart="30dp"

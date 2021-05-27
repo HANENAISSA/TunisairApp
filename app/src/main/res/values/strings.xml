@@ -48,6 +48,8 @@
     <string name="type_prompt">Choose your Request Type</string>
     <string name="click_to_attach_file">Click to Attach file</string>
     <string name="number_of_days">Number of days</string>
+    <string name="welcome_to_our_app">Welcome to our App</string>
+    <string name="fly_with_us">Fly with us !</string>
 
     <string-array name="type_arrays">
     <item>Annual leave</item>

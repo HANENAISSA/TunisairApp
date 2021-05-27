@@ -147,12 +147,14 @@ public class AddNewDemandeCongeFrag extends Fragment {
         dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                if(parent.getItemAtPosition(position).toString()=="Medical leave"){
+                if(parent.getItemAtPosition(position).toString().equals("Medical leave")){
                     layoutFile.setVisibility(View.VISIBLE);
-                }
-                if(parent.getItemAtPosition(position).toString()=="Annual leave"){
+                    edtNbrDays.setVisibility(View.INVISIBLE);
+                }else if(parent.getItemAtPosition(position).toString().equals("Annual leave")){
                     edtNbrDays.setVisibility(View.VISIBLE);
+                }else{
+                    layoutFile.setVisibility(View.INVISIBLE);
+                    edtNbrDays.setVisibility(View.INVISIBLE);
                 }
             }
 
